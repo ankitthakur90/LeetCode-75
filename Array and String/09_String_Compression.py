@@ -15,7 +15,6 @@ class Solution(object):
         if(len(chars)  <= 1):
             return len(chars)
         currCh = chars[0]
-        prvCh = " "
         chars.append(" ")
         i = 0
         while( currCh != " "):
@@ -31,23 +30,15 @@ class Solution(object):
                     rem = num%10
                     cntLarge.append(rem)
                     num //=10
-                ind = 0
                 cntLarge.reverse()
-                while(ind < len(cntLarge)):
-                    cntCh = str(cntLarge[ind])
-                    chars.append(cntCh)
-                    ind+=1
+                for digit in cntLarge:
+                    chars.append(str(digit))
             else:
                 if(cnt != 1):
-                    cntCh = str(cnt)
-                    chars.append(cntCh)
+                    chars.append(str(cnt))
             i = i + cnt
         currCh = chars[0]
-        while(currCh != " "):
-            currCh = chars[0]
-            if(currCh == " "):
-                break
-            else:
+        while(chars[0] != " "):
                 chars.pop(0)
         chars.pop(0)
         print(chars)
@@ -55,11 +46,6 @@ class Solution(object):
 
             
              
-
-
-
-
-
 
 s1 = Solution()
 lst = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
